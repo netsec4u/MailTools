@@ -1,88 +1,125 @@
-﻿---
+---
+document type: cmdlet
 external help file: MailTools-help.xml
+HelpUri: ''
+Locale: en-US
 Module Name: MailTools
-online version:
-schema: 2.0.0
+ms.date: 07/29/2025
+PlatyPS schema version: 2024-05-01
+title: ConvertTo-RecordXML
 ---
 
 # ConvertTo-RecordXML
 
 ## SYNOPSIS
+
 Converts record set object to XML.
 
 ## SYNTAX
 
+### __AllParameterSets
+
 ```
 ConvertTo-RecordXML
-	-InputObject <DataSet>
-	[-RootNodeName <Object>]
-	[<CommonParameters>]
+  -InputObject <DataSet>
+  [-RootNodeName <string>]
+  [<CommonParameters>]
 ```
 
+## ALIASES
+
+This cmdlet has the following aliases:
+  None
+
 ## DESCRIPTION
+
 Converts record set object to XML.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
-```powershell
+
 $RecordSet = Get-SqlClientDataSet -ServerInstance . -DatabaseName master -SqlCommandText 'SELECT * FROM sys.tables;' -OutputAs DataRow
 
 ConvertTo-RecordXML -InputObject $RecordSet -RootNodeName "Records"
-```
 
 Converts record set object to Xml with root node named Records.
 
 ### EXAMPLE 2
-```powershell
+
 Get-SqlClientDataSet -ServerInstance . -DatabaseName master -SqlCommandText 'SELECT * FROM sys.tables;' -OutputAs DataRow | ConvertTo-RecordXML -RootNodeName "Records"
-```
 
 Converts record set object to Xml with root node named Records.
 
 ## PARAMETERS
 
 ### -InputObject
+
 Input object.
 
 ```yaml
-Type: DataSet
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
+Type: System.Data.DataSet
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: true
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -RootNodeName
+
 XML Root node name.
 
 ```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: Records
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.String
+DefaultValue: Records
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+-ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Data.DataSet
 
+
+
 ## OUTPUTS
 
 ### System.Xml.XmlDocument
 
+
+
 ## NOTES
 
+
+
+
 ## RELATED LINKS
+
+None.
+

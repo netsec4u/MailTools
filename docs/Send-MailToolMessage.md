@@ -1,355 +1,475 @@
-﻿---
+---
+document type: cmdlet
 external help file: MailTools-help.xml
+HelpUri: ''
+Locale: en-US
 Module Name: MailTools
-online version:
-schema: 2.0.0
+ms.date: 07/29/2025
+PlatyPS schema version: 2024-05-01
+title: Send-MailToolMessage
 ---
 
 # Send-MailToolMessage
 
 ## SYNOPSIS
+
 Send an email message.
 
 ## SYNTAX
 
 ### Network (Default)
+
 ```
 Send-MailToolMessage
-	-MailFrom <MailAddress>
-	-MailTo <MailAddress[]>
-	[-ReplyTo <MailAddress[]>]
-	[-CarbonCopy <MailAddress[]>]
-	[-BlindCarbonCopy <MailAddress[]>]
-	-Subject <String>
-	[-MailAttachment <Attachment[]>]
-	-Body <String>
-	[-BodyAsHtml]
-	[-Priority <MailPriority>]
-	[-DeliveryNotificationOption <DeliveryNotificationOptions>]
-	[-SmtpDeliveryMethod <SmtpDeliveryMethod>]
-	-SmtpServer <String>
-	[-SmtpPort <Int32>]
-	[-UseTLS]
-	[-Credential <PSCredential>]
-	[<CommonParameters>]
+  -MailFrom <mailaddress>
+  -MailTo <mailaddress[]>
+  -Subject <string>
+  -Body <string>
+  -SmtpServer <string>
+  [-ReplyTo <mailaddress[]>]
+  [-CarbonCopy <mailaddress[]>]
+  [-BlindCarbonCopy <mailaddress[]>]
+  [-MailAttachment <Attachment[]>]
+  [-BodyAsHtml]
+  [-Priority <MailPriority>]
+  [-DeliveryNotificationOption <DeliveryNotificationOptions>]
+  [-SmtpDeliveryMethod <SmtpDeliveryMethod>]
+  [-SmtpPort <int>]
+  [-UseTLS]
+  [-Credential <pscredential>]
+  [<CommonParameters>]
 ```
 
 ### PickupDirectory
+
 ```
 Send-MailToolMessage
-	-MailFrom <MailAddress>
-	-MailTo <MailAddress[]>
-	[-ReplyTo <MailAddress[]>]
-	[-CarbonCopy <MailAddress[]>]
-	[-BlindCarbonCopy <MailAddress[]>]
-	-Subject <String>
-	[-MailAttachment <Attachment[]>]
-	-Body <String>
-	[-BodyAsHtml]
-	[-Priority <MailPriority>]
-	[-DeliveryNotificationOption <DeliveryNotificationOptions>]
-	[-SmtpDeliveryMethod <SmtpDeliveryMethod>]
-	-PickupDirectoryPath <DirectoryInfo>
-	[<CommonParameters>]
+  -MailFrom <mailaddress>
+  -MailTo <mailaddress[]>
+  -Subject <string>
+  -Body <string>
+  -PickupDirectoryPath <DirectoryInfo>
+  [-ReplyTo <mailaddress[]>]
+  [-CarbonCopy <mailaddress[]>]
+  [-BlindCarbonCopy <mailaddress[]>]
+  [-MailAttachment <Attachment[]>]
+  [-BodyAsHtml]
+  [-Priority <MailPriority>]
+  [-DeliveryNotificationOption <DeliveryNotificationOptions>]
+  [-SmtpDeliveryMethod <SmtpDeliveryMethod>]
+  [<CommonParameters>]
 ```
 
+## ALIASES
+
+This cmdlet has the following aliases:
+  None
+
 ## DESCRIPTION
+
 Send an email message.
 
 ## EXAMPLES
 
 ### EXAMPLE 1: Send email message using SMTP server
-```powershell
+
 Send-MailToolMessage -MailFrom "Joe<joe@example.com>" -MailTo "John<john@example.com>" -Subject "Test Email" -Body "This is a test message." -SmtpServer mail.example.com
-```
 
 Sends email message through SMTP server.
 
 ### EXAMPLE 2: Send email message using pickup folder
-```powershell
+
 Send-MailToolMessage -MailFrom "Joe<joe@example.com>" -MailTo "John<john@example.com>" -Subject "Test Email" -Body "This is a test message." -SmtpDeliveryMethod "SpecifiedPickupDirectory" -PickupDirectoryPath "C:\inetpub\mailroot\pickup"
-```
 
 Sends email message via drop folder.
 
 ## PARAMETERS
 
 ### -BlindCarbonCopy
+
 Specifies the addresses to which the mail blind copy is sent.
-Enter names (optional) and the email address, such as Name\<someone@example.com\>.
+Enter names (optional) and the email address, such as Name<someone@example.com>.
 
 ```yaml
-Type: MailAddress[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Net.Mail.MailAddress[]
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -Body
+
 Specifies the body of the email message.
 
 ```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.String
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -BodyAsHtml
+
 Indicates that the value of the Body parameter contains HTML.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -CarbonCopy
+
 Specifies the addresses to which the mail copy is sent.
-Enter names (optional) and the email address, such as Name\<someone@example.com\>.
+Enter names (optional) and the email address, such as Name<someone@example.com>.
 
 ```yaml
-Type: MailAddress[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Net.Mail.MailAddress[]
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -Credential
+
 Specifies a user account that has permission to perform this action.
 The default is the current user.
 
 ```yaml
-Type: PSCredential
-Parameter Sets: Network
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Management.Automation.PSCredential
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Network
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -DeliveryNotificationOption
+
 Describes the delivery notification options for email.
 
 ```yaml
-Type: DeliveryNotificationOptions
-Parameter Sets: (All)
-Aliases:
-Accepted values: None, OnSuccess, OnFailure, Delay, Never
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Net.Mail.DeliveryNotificationOptions
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -MailAttachment
+
 Specifies attachment object.
 
 ```yaml
-Type: Attachment[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Net.Mail.Attachment[]
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -MailFrom
+
 Specifies the address from which the mail is sent.
-Enter a name (optional) and email address, such as Name\<someone@example.com\>.
+Enter a name (optional) and email address, such as Name<someone@example.com>.
 
 ```yaml
-Type: MailAddress
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Net.Mail.MailAddress
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -MailTo
+
 Specifies the addresses to which the mail is sent.
-Enter names (optional) and the email address, such as Name\<someone@example.com\>.
+Enter names (optional) and the email address, such as Name<someone@example.com>.
 
 ```yaml
-Type: MailAddress[]
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Net.Mail.MailAddress[]
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -PickupDirectoryPath
+
 Specifies the path the SMTP Server pickup directory.
 
 ```yaml
-Type: DirectoryInfo
-Parameter Sets: PickupDirectory
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.IO.DirectoryInfo
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: PickupDirectory
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -Priority
+
 Specifies the priority of the email message.
 
 ```yaml
-Type: MailPriority
-Parameter Sets: (All)
-Aliases:
-Accepted values: Normal, Low, High
-
-Required: False
-Position: Named
-Default value: Normal
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Net.Mail.MailPriority
+DefaultValue: Normal
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -ReplyTo
+
 Specifies the reply to address where replies will be sent.
-Enter names (optional) and the email address, such as Name\<someone@example.com\>.
+Enter names (optional) and the email address, such as Name<someone@example.com>.
 
 ```yaml
-Type: MailAddress[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Net.Mail.MailAddress[]
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -SmtpDeliveryMethod
+
 Specifies the method used for delivery.
 
 ```yaml
-Type: SmtpDeliveryMethod
-Parameter Sets: (All)
-Aliases:
-Accepted values: Network, SpecifiedPickupDirectory, PickupDirectoryFromIis
-
-Required: False
-Position: Named
-Default value: Network
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Net.Mail.SmtpDeliveryMethod
+DefaultValue: Network
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -SmtpPort
+
 Specifies an alternate port on the SMTP server.
 The default value is 25, which is the default SMTP port.
 
 ```yaml
-Type: Int32
-Parameter Sets: Network
-Aliases:
-
-Required: False
-Position: Named
-Default value: 25
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Int32
+DefaultValue: 25
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Network
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -SmtpServer
+
 Specifies the name of the SMTP server that sends the email message.
 
 ```yaml
-Type: String
-Parameter Sets: Network
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.String
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Network
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -Subject
+
 Specifies the subject of the email message.
 
 ```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.String
+DefaultValue: None
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### -UseTLS
+
 Indicates that the cmdlet uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer to send mail.
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: Network
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
+Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: Network
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+-ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
-
-### None
 
 ## OUTPUTS
 
 ### System.Void
 
+
+
 ## NOTES
 
+
+
+
 ## RELATED LINKS
+
+None.
+

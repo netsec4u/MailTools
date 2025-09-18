@@ -1,1418 +1,1022 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<helpItems schema="maml" xmlns="http://msh">
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<?xml version="1.0" encoding="utf-8"?>
+<helpItems xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" schema="maml" xmlns="http://msh">
+  <command:command>
     <command:details>
       <command:name>Build-MailBody</command:name>
+      <maml:description>
+        <maml:para>Provides functions to build HTML message body from Error or record set objects.</maml:para>
+      </maml:description>
       <command:verb>Build</command:verb>
       <command:noun>MailBody</command:noun>
-      <maml:description>
-        <maml:para>Build HTML message body from Xml data.</maml:para>
-      </maml:description>
     </command:details>
     <maml:description>
       <maml:para>Build HTML message body from Error or record set objects.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Build-MailBody</maml:name>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Build-MailBody
+</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>DebugItem</maml:name>
           <maml:description>
             <maml:para>Hashtable containing debug information.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">OrderedDictionary</command:parameterValue>
-          <dev:type>
-            <maml:name>OrderedDictionary</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Collections.Specialized.OrderedDictionary</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>SummaryItem</maml:name>
           <maml:description>
             <maml:para>Hashtable containing items for summary table in email output.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">OrderedDictionary</command:parameterValue>
-          <dev:type>
-            <maml:name>OrderedDictionary</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Collections.Specialized.OrderedDictionary</command:parameterValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>Xml</maml:name>
           <maml:description>
             <maml:para>Xml with error or record set object.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">XmlDocument</command:parameterValue>
-          <dev:type>
-            <maml:name>XmlDocument</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.Xml.XmlDocument</command:parameterValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>DebugItem</maml:name>
         <maml:description>
           <maml:para>Hashtable containing debug information.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">OrderedDictionary</command:parameterValue>
-        <dev:type>
-          <maml:name>OrderedDictionary</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Collections.Specialized.OrderedDictionary</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>SummaryItem</maml:name>
         <maml:description>
           <maml:para>Hashtable containing items for summary table in email output.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">OrderedDictionary</command:parameterValue>
-        <dev:type>
-          <maml:name>OrderedDictionary</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Collections.Specialized.OrderedDictionary</command:parameterValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>Xml</maml:name>
         <maml:description>
           <maml:para>Xml with error or record set object.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">XmlDocument</command:parameterValue>
-        <dev:type>
-          <maml:name>XmlDocument</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.Xml.XmlDocument</command:parameterValue>
       </command:parameter>
     </command:parameters>
-    <command:inputTypes>
-      <command:inputType>
-        <dev:type>
-          <maml:name>None</maml:name>
-        </dev:type>
-        <maml:description>
-          <maml:para></maml:para>
-        </maml:description>
-      </command:inputType>
-    </command:inputTypes>
+    <command:inputTypes />
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>System.String</maml:name>
+          <dev:name>System.String</dev:name>
         </dev:type>
         <maml:description>
-          <maml:para></maml:para>
+          <maml:para />
         </maml:description>
       </command:returnValue>
     </command:returnValues>
     <maml:alertSet>
       <maml:alert>
-        <maml:para></maml:para>
+        <maml:para />
       </maml:alert>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>--------------- EXAMPLE 1: Build HTML email body ---------------</maml:title>
-        <dev:code>$XmlDocument = '&lt;Root&gt;&lt;/root&gt;'
+        <maml:title>--------- EXAMPLE 1: Build HTML email body ---------</maml:title>
+        <maml:introduction>
+          <maml:para>$XmlDocument = '&lt;Root&gt;&lt;/root&gt;'
 $OrderedHashtable = [ordered]@{
 	Server = 'MyServer'
 	Status = 'Down'
-}
-
-Build-MailBody -Xml $XmlDocument -SummaryItem $OrderedHashtable</dev:code>
-        <dev:remarks>
+}</maml:para>
+          <maml:para>&#x80;</maml:para>
+          <maml:para>Build-MailBody -Xml $XmlDocument -SummaryItem $OrderedHashtable</maml:para>
+          <maml:para>&#x80;</maml:para>
           <maml:para>Builds HTML body.</maml:para>
-        </dev:remarks>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
       </command:example>
     </command:examples>
     <command:relatedLinks />
   </command:command>
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <command:command>
     <command:details>
       <command:name>ConvertTo-ErrorXML</command:name>
-      <command:verb>ConvertTo</command:verb>
-      <command:noun>ErrorXML</command:noun>
       <maml:description>
         <maml:para>Convert error object to XML.</maml:para>
       </maml:description>
+      <command:verb>ConvertTo</command:verb>
+      <command:noun>ErrorXML</command:noun>
     </command:details>
     <maml:description>
       <maml:para>Convert error object to XML.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>ConvertTo-ErrorXML</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>ConvertTo-ErrorXML
+</maml:name>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>ErrorObject</maml:name>
           <maml:description>
             <maml:para>Error object.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">ErrorRecord</command:parameterValue>
-          <dev:type>
-            <maml:name>ErrorRecord</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.Management.Automation.ErrorRecord</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>RootNodeName</maml:name>
           <maml:description>
             <maml:para>XML Root node name.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-          <dev:type>
-            <maml:name>String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>ErrorRecord</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>ErrorObject</maml:name>
         <maml:description>
           <maml:para>Error object.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">ErrorRecord</command:parameterValue>
-        <dev:type>
-          <maml:name>ErrorRecord</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.Management.Automation.ErrorRecord</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>RootNodeName</maml:name>
         <maml:description>
           <maml:para>XML Root node name.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-        <dev:type>
-          <maml:name>String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>ErrorRecord</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes>
       <command:inputType>
         <dev:type>
-          <maml:name>System.Management.Automation.ErrorRecord</maml:name>
+          <dev:name>System.Management.Automation.ErrorRecord</dev:name>
         </dev:type>
         <maml:description>
-          <maml:para></maml:para>
+          <maml:para />
         </maml:description>
       </command:inputType>
     </command:inputTypes>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>System.Xml.XmlDocument</maml:name>
+          <dev:name>System.Xml.XmlDocument</dev:name>
         </dev:type>
         <maml:description>
-          <maml:para></maml:para>
+          <maml:para />
         </maml:description>
       </command:returnValue>
     </command:returnValues>
     <maml:alertSet>
       <maml:alert>
-        <maml:para></maml:para>
+        <maml:para />
       </maml:alert>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>$ErrorObject = Get-Error
-
-ConvertTo-ErrorXML -ErrorObject $ErrorObject -RootNodeName "Errors"</dev:code>
-        <dev:remarks>
+        <maml:title>--------- EXAMPLE 1 ---------</maml:title>
+        <maml:introduction>
+          <maml:para>$ErrorObject = Get-Error</maml:para>
+          <maml:para>&#x80;</maml:para>
+          <maml:para>ConvertTo-ErrorXML -ErrorObject $ErrorObject -RootNodeName "Errors"</maml:para>
+          <maml:para>&#x80;</maml:para>
           <maml:para>Converts error object to Xml with root node named Errors.</maml:para>
-        </dev:remarks>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
       </command:example>
       <command:example>
-        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-        <dev:code>Get-Error | ConvertTo-ErrorXML -RootNodeName "Errors"</dev:code>
-        <dev:remarks>
+        <maml:title>--------- EXAMPLE 2 ---------</maml:title>
+        <maml:introduction>
+          <maml:para>Get-Error | ConvertTo-ErrorXML -RootNodeName "Errors"</maml:para>
+          <maml:para>&#x80;</maml:para>
           <maml:para>Converts error object to Xml with root node named Errors.</maml:para>
-        </dev:remarks>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
       </command:example>
     </command:examples>
     <command:relatedLinks />
   </command:command>
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <command:command>
     <command:details>
       <command:name>ConvertTo-ObjectXML</command:name>
+      <maml:description>
+        <maml:para>Convert PowerShell object to XML.</maml:para>
+      </maml:description>
       <command:verb>ConvertTo</command:verb>
       <command:noun>ObjectXML</command:noun>
-      <maml:description>
-        <maml:para>Convert object to XML.</maml:para>
-      </maml:description>
     </command:details>
     <maml:description>
       <maml:para>Convert object to XML.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>ConvertTo-ObjectXML</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>ConvertTo-ObjectXML
+</maml:name>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>Object</maml:name>
           <maml:description>
             <maml:para>Object to convert to Xml.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-          <dev:type>
-            <maml:name>Object</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.Object</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>RootNodeName</maml:name>
           <maml:description>
             <maml:para>XML Root node name.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-          <dev:type>
-            <maml:name>String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>ObjectRecord</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>Object</maml:name>
         <maml:description>
           <maml:para>Object to convert to Xml.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
-        <dev:type>
-          <maml:name>Object</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.Object</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>RootNodeName</maml:name>
         <maml:description>
           <maml:para>XML Root node name.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-        <dev:type>
-          <maml:name>String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>ObjectRecord</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes>
       <command:inputType>
         <dev:type>
-          <maml:name>System.Object</maml:name>
+          <dev:name>System.Object</dev:name>
         </dev:type>
         <maml:description>
-          <maml:para></maml:para>
+          <maml:para />
         </maml:description>
       </command:inputType>
     </command:inputTypes>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>System.Xml.XmlDocument</maml:name>
+          <dev:name>System.Xml.XmlDocument</dev:name>
         </dev:type>
         <maml:description>
-          <maml:para></maml:para>
+          <maml:para />
         </maml:description>
       </command:returnValue>
     </command:returnValues>
     <maml:alertSet>
       <maml:alert>
-        <maml:para></maml:para>
+        <maml:para />
       </maml:alert>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>$Object = Get-ChildItem
-
-ConvertTo-ObjectXML -Object $Object -RootNodeName "Object"</dev:code>
-        <dev:remarks>
+        <maml:title>--------- EXAMPLE 1 ---------</maml:title>
+        <maml:introduction>
+          <maml:para>$Object = Get-ChildItem</maml:para>
+          <maml:para>&#x80;</maml:para>
+          <maml:para>ConvertTo-ObjectXML -Object $Object -RootNodeName "Object"</maml:para>
+          <maml:para>&#x80;</maml:para>
           <maml:para>Converts PowerShell object to Xml with root node named Object.</maml:para>
-        </dev:remarks>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
       </command:example>
       <command:example>
-        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-        <dev:code>Get-ChildItem | ConvertTo-ObjectXML -RootNodeName "Object"</dev:code>
-        <dev:remarks>
+        <maml:title>--------- EXAMPLE 2 ---------</maml:title>
+        <maml:introduction>
+          <maml:para>Get-ChildItem | ConvertTo-ObjectXML -RootNodeName "Object"</maml:para>
+          <maml:para>&#x80;</maml:para>
           <maml:para>Converts PowerShell object to Xml with root node named Object.</maml:para>
-        </dev:remarks>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
       </command:example>
     </command:examples>
     <command:relatedLinks />
   </command:command>
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <command:command>
     <command:details>
       <command:name>ConvertTo-RecordXML</command:name>
-      <command:verb>ConvertTo</command:verb>
-      <command:noun>RecordXML</command:noun>
       <maml:description>
         <maml:para>Converts record set object to XML.</maml:para>
       </maml:description>
+      <command:verb>ConvertTo</command:verb>
+      <command:noun>RecordXML</command:noun>
     </command:details>
     <maml:description>
       <maml:para>Converts record set object to XML.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>ConvertTo-RecordXML</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+        <maml:name>ConvertTo-RecordXML
+</maml:name>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>InputObject</maml:name>
           <maml:description>
             <maml:para>Input object.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">DataSet</command:parameterValue>
-          <dev:type>
-            <maml:name>DataSet</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.Data.DataSet</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>RootNodeName</maml:name>
           <maml:description>
             <maml:para>XML Root node name.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-          <dev:type>
-            <maml:name>String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>Records</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>InputObject</maml:name>
         <maml:description>
           <maml:para>Input object.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">DataSet</command:parameterValue>
-        <dev:type>
-          <maml:name>DataSet</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.Data.DataSet</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>RootNodeName</maml:name>
         <maml:description>
           <maml:para>XML Root node name.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-        <dev:type>
-          <maml:name>String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>Records</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes>
       <command:inputType>
         <dev:type>
-          <maml:name>System.Data.DataSet</maml:name>
+          <dev:name>System.Data.DataSet</dev:name>
         </dev:type>
         <maml:description>
-          <maml:para></maml:para>
+          <maml:para />
         </maml:description>
       </command:inputType>
     </command:inputTypes>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>System.Xml.XmlDocument</maml:name>
+          <dev:name>System.Xml.XmlDocument</dev:name>
         </dev:type>
         <maml:description>
-          <maml:para></maml:para>
+          <maml:para />
         </maml:description>
       </command:returnValue>
     </command:returnValues>
     <maml:alertSet>
       <maml:alert>
-        <maml:para></maml:para>
+        <maml:para />
       </maml:alert>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>$RecordSet = Get-SqlClientDataSet -ServerInstance . -DatabaseName master -SqlCommandText 'SELECT * FROM sys.tables;' -OutputAs DataRow
-
-ConvertTo-RecordXML -InputObject $RecordSet -RootNodeName "Records"</dev:code>
-        <dev:remarks>
+        <maml:title>--------- EXAMPLE 1 ---------</maml:title>
+        <maml:introduction>
+          <maml:para>$RecordSet = Get-SqlClientDataSet -ServerInstance . -DatabaseName master -SqlCommandText 'SELECT * FROM sys.tables;' -OutputAs DataRow</maml:para>
+          <maml:para>&#x80;</maml:para>
+          <maml:para>ConvertTo-RecordXML -InputObject $RecordSet -RootNodeName "Records"</maml:para>
+          <maml:para>&#x80;</maml:para>
           <maml:para>Converts record set object to Xml with root node named Records.</maml:para>
-        </dev:remarks>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
       </command:example>
       <command:example>
-        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-        <dev:code>Get-SqlClientDataSet -ServerInstance . -DatabaseName master -SqlCommandText 'SELECT * FROM sys.tables;' -OutputAs DataRow | ConvertTo-RecordXML -RootNodeName "Records"</dev:code>
-        <dev:remarks>
+        <maml:title>--------- EXAMPLE 2 ---------</maml:title>
+        <maml:introduction>
+          <maml:para>Get-SqlClientDataSet -ServerInstance . -DatabaseName master -SqlCommandText 'SELECT * FROM sys.tables;' -OutputAs DataRow | ConvertTo-RecordXML -RootNodeName "Records"</maml:para>
+          <maml:para>&#x80;</maml:para>
           <maml:para>Converts record set object to Xml with root node named Records.</maml:para>
-        </dev:remarks>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
       </command:example>
     </command:examples>
     <command:relatedLinks />
   </command:command>
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <command:command>
     <command:details>
       <command:name>Format-MailAttachment</command:name>
-      <command:verb>Format</command:verb>
-      <command:noun>MailAttachment</command:noun>
       <maml:description>
         <maml:para>Create mail attachment object.</maml:para>
       </maml:description>
+      <command:verb>Format</command:verb>
+      <command:noun>MailAttachment</command:noun>
     </command:details>
     <maml:description>
       <maml:para>Create mail attachment object.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Format-MailAttachment</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>FileName</maml:name>
-          <maml:description>
-            <maml:para>Sets the MIME content ID for this attachment.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-          <dev:type>
-            <maml:name>String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>FileStream</maml:name>
-          <maml:description>
-            <maml:para>A readable Stream that contains the content for this attachment.</maml:para>
-          </maml:description>
-          <command:parameterValue required="true" variableLength="false">Stream</command:parameterValue>
-          <dev:type>
-            <maml:name>Stream</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>Inline</maml:name>
-          <maml:description>
-            <maml:para>Sets the disposition type as Inline for an email attachment.</maml:para>
-          </maml:description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-      </command:syntaxItem>
-      <command:syntaxItem>
-        <maml:name>Format-MailAttachment</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Format-MailAttachment
+</maml:name>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>FilePath</maml:name>
           <maml:description>
             <maml:para>Specifies the path and file names of file to be attached.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">FileInfo</command:parameterValue>
-          <dev:type>
-            <maml:name>FileInfo</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.IO.FileInfo</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>Inline</maml:name>
           <maml:description>
             <maml:para>Sets the disposition type as Inline for an email attachment.</maml:para>
           </maml:description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Management.Automation.SwitchParameter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Format-MailAttachment
+</maml:name>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>FileName</maml:name>
+          <maml:description>
+            <maml:para>Sets the MIME content ID for this attachment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>FileStream</maml:name>
+          <maml:description>
+            <maml:para>A readable Stream that contains the content for this attachment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="true">System.IO.Stream</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>Inline</maml:name>
+          <maml:description>
+            <maml:para>Sets the disposition type as Inline for an email attachment.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.Management.Automation.SwitchParameter</command:parameterValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>FileName</maml:name>
         <maml:description>
           <maml:para>Sets the MIME content ID for this attachment.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-        <dev:type>
-          <maml:name>String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>FilePath</maml:name>
         <maml:description>
           <maml:para>Specifies the path and file names of file to be attached.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">FileInfo</command:parameterValue>
-        <dev:type>
-          <maml:name>FileInfo</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.IO.FileInfo</command:parameterValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>FileStream</maml:name>
         <maml:description>
           <maml:para>A readable Stream that contains the content for this attachment.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">Stream</command:parameterValue>
-        <dev:type>
-          <maml:name>Stream</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.IO.Stream</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>Inline</maml:name>
         <maml:description>
           <maml:para>Sets the disposition type as Inline for an email attachment.</maml:para>
         </maml:description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-        <dev:type>
-          <maml:name>SwitchParameter</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>False</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Management.Automation.SwitchParameter</command:parameterValue>
       </command:parameter>
     </command:parameters>
-    <command:inputTypes>
-      <command:inputType>
-        <dev:type>
-          <maml:name>None</maml:name>
-        </dev:type>
-        <maml:description>
-          <maml:para></maml:para>
-        </maml:description>
-      </command:inputType>
-    </command:inputTypes>
+    <command:inputTypes />
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>System.Net.Mail.Attachment</maml:name>
+          <dev:name>System.Net.Mail.Attachment</dev:name>
         </dev:type>
         <maml:description>
-          <maml:para></maml:para>
+          <maml:para />
         </maml:description>
       </command:returnValue>
     </command:returnValues>
     <maml:alertSet>
       <maml:alert>
-        <maml:para></maml:para>
+        <maml:para />
       </maml:alert>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Format-MailAttachment -FilePath C:\Temp\MyFile.txt</dev:code>
-        <dev:remarks>
+        <maml:title>--------- EXAMPLE 1 ---------</maml:title>
+        <maml:introduction>
+          <maml:para>Format-MailAttachment -FilePath C:\Temp\MyFile.txt</maml:para>
+          <maml:para>&#x80;</maml:para>
           <maml:para>Creates new mail attachment object using MyFile.txt.</maml:para>
-        </dev:remarks>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
       </command:example>
       <command:example>
-        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-        <dev:code>$FileStreamObject = [System.IO.FileStream]::New('C:\MyFile.txt', [System.IO.FileMode]::Open)
-
-Format-MailAttachment -FileName image.png -FileStream $FileStreamObject -Inline</dev:code>
-        <dev:remarks>
+        <maml:title>--------- EXAMPLE 2 ---------</maml:title>
+        <maml:introduction>
+          <maml:para>$FileStreamObject = [System.IO.FileStream]::New('C:\MyFile.txt', [System.IO.FileMode]::Open)</maml:para>
+          <maml:para>&#x80;</maml:para>
+          <maml:para>Format-MailAttachment -FileName image.png -FileStream $FileStreamObject -Inline</maml:para>
+          <maml:para>&#x80;</maml:para>
           <maml:para>Creates new mail attachment called image.png from file stream object.</maml:para>
-        </dev:remarks>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
       </command:example>
     </command:examples>
     <command:relatedLinks />
   </command:command>
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <command:command>
     <command:details>
       <command:name>Format-XslTemplate</command:name>
-      <command:verb>Format</command:verb>
-      <command:noun>XslTemplate</command:noun>
       <maml:description>
         <maml:para>Transform Xsl template.</maml:para>
       </maml:description>
+      <command:verb>Format</command:verb>
+      <command:noun>XslTemplate</command:noun>
     </command:details>
     <maml:description>
       <maml:para>Transform Xsl template.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Format-XslTemplate</maml:name>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Format-XslTemplate
+</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>XmlContent</maml:name>
           <maml:description>
             <maml:para>XML content to transform into Xsl.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">XmlDocument</command:parameterValue>
-          <dev:type>
-            <maml:name>XmlDocument</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>&lt;root/&gt;</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Xml.XmlDocument</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>XsltArgumentList</maml:name>
           <maml:description>
             <maml:para>Xsl Transform argument list.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">XsltArgumentList</command:parameterValue>
-          <dev:type>
-            <maml:name>XsltArgumentList</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Xml.Xsl.XsltArgumentList</command:parameterValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>XslTemplatePath</maml:name>
           <maml:description>
             <maml:para>Path to Xsl template.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">FileInfo</command:parameterValue>
-          <dev:type>
-            <maml:name>FileInfo</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.IO.FileInfo</command:parameterValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>XmlContent</maml:name>
         <maml:description>
           <maml:para>XML content to transform into Xsl.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">XmlDocument</command:parameterValue>
-        <dev:type>
-          <maml:name>XmlDocument</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>&lt;root/&gt;</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Xml.XmlDocument</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>XsltArgumentList</maml:name>
         <maml:description>
           <maml:para>Xsl Transform argument list.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">XsltArgumentList</command:parameterValue>
-        <dev:type>
-          <maml:name>XsltArgumentList</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Xml.Xsl.XsltArgumentList</command:parameterValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>XslTemplatePath</maml:name>
         <maml:description>
           <maml:para>Path to Xsl template.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">FileInfo</command:parameterValue>
-        <dev:type>
-          <maml:name>FileInfo</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.IO.FileInfo</command:parameterValue>
       </command:parameter>
     </command:parameters>
-    <command:inputTypes>
-      <command:inputType>
-        <dev:type>
-          <maml:name>None</maml:name>
-        </dev:type>
-        <maml:description>
-          <maml:para></maml:para>
-        </maml:description>
-      </command:inputType>
-    </command:inputTypes>
+    <command:inputTypes />
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>System.Xml.XmlDocument</maml:name>
+          <dev:name>System.Xml.XmlDocument</dev:name>
         </dev:type>
         <maml:description>
-          <maml:para></maml:para>
+          <maml:para />
         </maml:description>
       </command:returnValue>
     </command:returnValues>
     <maml:alertSet>
       <maml:alert>
-        <maml:para></maml:para>
+        <maml:para />
       </maml:alert>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Format-XslTemplate -XmlContent . -XslTemplatePath .\MyTemplate.xsl</dev:code>
-        <dev:remarks>
+        <maml:title>--------- EXAMPLE 1 ---------</maml:title>
+        <maml:introduction>
+          <maml:para>Format-XslTemplate -XmlContent . -XslTemplatePath .\MyTemplate.xsl</maml:para>
+          <maml:para>&#x80;</maml:para>
           <maml:para>Transforms Xsl template.</maml:para>
-        </dev:remarks>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
       </command:example>
     </command:examples>
     <command:relatedLinks />
   </command:command>
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <command:command>
     <command:details>
       <command:name>Send-MailToolMessage</command:name>
-      <command:verb>Send</command:verb>
-      <command:noun>MailToolMessage</command:noun>
       <maml:description>
         <maml:para>Send an email message.</maml:para>
       </maml:description>
+      <command:verb>Send</command:verb>
+      <command:noun>MailToolMessage</command:noun>
     </command:details>
     <maml:description>
       <maml:para>Send an email message.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Send-MailToolMessage</maml:name>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Send-MailToolMessage
+</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>BlindCarbonCopy</maml:name>
           <maml:description>
-            <maml:para>Specifies the addresses to which the mail blind copy is sent. Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+            <maml:para>Specifies the addresses to which the mail blind copy is sent.
+Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">MailAddress[]</command:parameterValue>
-          <dev:type>
-            <maml:name>MailAddress[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.MailAddress[]</command:parameterValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>Body</maml:name>
           <maml:description>
             <maml:para>Specifies the body of the email message.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-          <dev:type>
-            <maml:name>String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>BodyAsHtml</maml:name>
           <maml:description>
             <maml:para>Indicates that the value of the Body parameter contains HTML.</maml:para>
           </maml:description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Management.Automation.SwitchParameter</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>CarbonCopy</maml:name>
           <maml:description>
-            <maml:para>Specifies the addresses to which the mail copy is sent. Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+            <maml:para>Specifies the addresses to which the mail copy is sent.
+Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">MailAddress[]</command:parameterValue>
-          <dev:type>
-            <maml:name>MailAddress[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.MailAddress[]</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>Credential</maml:name>
           <maml:description>
-            <maml:para>Specifies a user account that has permission to perform this action. The default is the current user.</maml:para>
+            <maml:para>Specifies a user account that has permission to perform this action.
+The default is the current user.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-          <dev:type>
-            <maml:name>PSCredential</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Management.Automation.PSCredential</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>DeliveryNotificationOption</maml:name>
           <maml:description>
             <maml:para>Describes the delivery notification options for email.</maml:para>
           </maml:description>
-          <command:parameterValueGroup>
-            <command:parameterValue required="false" command:variableLength="false">None</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">OnSuccess</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">OnFailure</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Delay</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Never</command:parameterValue>
-          </command:parameterValueGroup>
-          <command:parameterValue required="true" variableLength="false">DeliveryNotificationOptions</command:parameterValue>
-          <dev:type>
-            <maml:name>DeliveryNotificationOptions</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.DeliveryNotificationOptions</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>MailAttachment</maml:name>
           <maml:description>
             <maml:para>Specifies attachment object.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">Attachment[]</command:parameterValue>
-          <dev:type>
-            <maml:name>Attachment[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.Attachment[]</command:parameterValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>MailFrom</maml:name>
           <maml:description>
-            <maml:para>Specifies the address from which the mail is sent. Enter a name (optional) and email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+            <maml:para>Specifies the address from which the mail is sent.
+Enter a name (optional) and email address, such as Name&lt;someone@example.com&gt;.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">MailAddress</command:parameterValue>
-          <dev:type>
-            <maml:name>MailAddress</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.Net.Mail.MailAddress</command:parameterValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>MailTo</maml:name>
           <maml:description>
-            <maml:para>Specifies the addresses to which the mail is sent. Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+            <maml:para>Specifies the addresses to which the mail is sent.
+Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">MailAddress[]</command:parameterValue>
-          <dev:type>
-            <maml:name>MailAddress[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.Net.Mail.MailAddress[]</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>Priority</maml:name>
           <maml:description>
             <maml:para>Specifies the priority of the email message.</maml:para>
           </maml:description>
-          <command:parameterValueGroup>
-            <command:parameterValue required="false" command:variableLength="false">Normal</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Low</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">High</command:parameterValue>
-          </command:parameterValueGroup>
-          <command:parameterValue required="true" variableLength="false">MailPriority</command:parameterValue>
-          <dev:type>
-            <maml:name>MailPriority</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>Normal</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.MailPriority</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>ReplyTo</maml:name>
           <maml:description>
-            <maml:para>Specifies the reply to address where replies will be sent. Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+            <maml:para>Specifies the reply to address where replies will be sent.
+Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">MailAddress[]</command:parameterValue>
-          <dev:type>
-            <maml:name>MailAddress[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.MailAddress[]</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>SmtpDeliveryMethod</maml:name>
           <maml:description>
             <maml:para>Specifies the method used for delivery.</maml:para>
           </maml:description>
-          <command:parameterValueGroup>
-            <command:parameterValue required="false" command:variableLength="false">Network</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">SpecifiedPickupDirectory</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">PickupDirectoryFromIis</command:parameterValue>
-          </command:parameterValueGroup>
-          <command:parameterValue required="true" variableLength="false">SmtpDeliveryMethod</command:parameterValue>
-          <dev:type>
-            <maml:name>SmtpDeliveryMethod</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>Network</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.SmtpDeliveryMethod</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>SmtpPort</maml:name>
           <maml:description>
-            <maml:para>Specifies an alternate port on the SMTP server. The default value is 25, which is the default SMTP port.</maml:para>
+            <maml:para>Specifies an alternate port on the SMTP server.
+The default value is 25, which is the default SMTP port.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
-          <dev:type>
-            <maml:name>Int32</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>25</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Int32</command:parameterValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>SmtpServer</maml:name>
           <maml:description>
             <maml:para>Specifies the name of the SMTP server that sends the email message.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-          <dev:type>
-            <maml:name>String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>Subject</maml:name>
           <maml:description>
             <maml:para>Specifies the subject of the email message.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-          <dev:type>
-            <maml:name>String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>UseTLS</maml:name>
           <maml:description>
             <maml:para>Indicates that the cmdlet uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer to send mail.</maml:para>
           </maml:description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Management.Automation.SwitchParameter</command:parameterValue>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>Send-MailToolMessage</maml:name>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Send-MailToolMessage
+</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>BlindCarbonCopy</maml:name>
           <maml:description>
-            <maml:para>Specifies the addresses to which the mail blind copy is sent. Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+            <maml:para>Specifies the addresses to which the mail blind copy is sent.
+Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">MailAddress[]</command:parameterValue>
-          <dev:type>
-            <maml:name>MailAddress[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.MailAddress[]</command:parameterValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>Body</maml:name>
           <maml:description>
             <maml:para>Specifies the body of the email message.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-          <dev:type>
-            <maml:name>String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>BodyAsHtml</maml:name>
           <maml:description>
             <maml:para>Indicates that the value of the Body parameter contains HTML.</maml:para>
           </maml:description>
-          <dev:type>
-            <maml:name>SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Management.Automation.SwitchParameter</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>CarbonCopy</maml:name>
           <maml:description>
-            <maml:para>Specifies the addresses to which the mail copy is sent. Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+            <maml:para>Specifies the addresses to which the mail copy is sent.
+Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">MailAddress[]</command:parameterValue>
-          <dev:type>
-            <maml:name>MailAddress[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.MailAddress[]</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>DeliveryNotificationOption</maml:name>
           <maml:description>
             <maml:para>Describes the delivery notification options for email.</maml:para>
           </maml:description>
-          <command:parameterValueGroup>
-            <command:parameterValue required="false" command:variableLength="false">None</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">OnSuccess</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">OnFailure</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Delay</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Never</command:parameterValue>
-          </command:parameterValueGroup>
-          <command:parameterValue required="true" variableLength="false">DeliveryNotificationOptions</command:parameterValue>
-          <dev:type>
-            <maml:name>DeliveryNotificationOptions</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.DeliveryNotificationOptions</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>MailAttachment</maml:name>
           <maml:description>
             <maml:para>Specifies attachment object.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">Attachment[]</command:parameterValue>
-          <dev:type>
-            <maml:name>Attachment[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.Attachment[]</command:parameterValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>MailFrom</maml:name>
           <maml:description>
-            <maml:para>Specifies the address from which the mail is sent. Enter a name (optional) and email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+            <maml:para>Specifies the address from which the mail is sent.
+Enter a name (optional) and email address, such as Name&lt;someone@example.com&gt;.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">MailAddress</command:parameterValue>
-          <dev:type>
-            <maml:name>MailAddress</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.Net.Mail.MailAddress</command:parameterValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>MailTo</maml:name>
           <maml:description>
-            <maml:para>Specifies the addresses to which the mail is sent. Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+            <maml:para>Specifies the addresses to which the mail is sent.
+Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">MailAddress[]</command:parameterValue>
-          <dev:type>
-            <maml:name>MailAddress[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.Net.Mail.MailAddress[]</command:parameterValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>PickupDirectoryPath</maml:name>
           <maml:description>
             <maml:para>Specifies the path the SMTP Server pickup directory.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">DirectoryInfo</command:parameterValue>
-          <dev:type>
-            <maml:name>DirectoryInfo</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.IO.DirectoryInfo</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>Priority</maml:name>
           <maml:description>
             <maml:para>Specifies the priority of the email message.</maml:para>
           </maml:description>
-          <command:parameterValueGroup>
-            <command:parameterValue required="false" command:variableLength="false">Normal</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Low</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">High</command:parameterValue>
-          </command:parameterValueGroup>
-          <command:parameterValue required="true" variableLength="false">MailPriority</command:parameterValue>
-          <dev:type>
-            <maml:name>MailPriority</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>Normal</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.MailPriority</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>ReplyTo</maml:name>
           <maml:description>
-            <maml:para>Specifies the reply to address where replies will be sent. Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+            <maml:para>Specifies the reply to address where replies will be sent.
+Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">MailAddress[]</command:parameterValue>
-          <dev:type>
-            <maml:name>MailAddress[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.MailAddress[]</command:parameterValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>SmtpDeliveryMethod</maml:name>
           <maml:description>
             <maml:para>Specifies the method used for delivery.</maml:para>
           </maml:description>
-          <command:parameterValueGroup>
-            <command:parameterValue required="false" command:variableLength="false">Network</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">SpecifiedPickupDirectory</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">PickupDirectoryFromIis</command:parameterValue>
-          </command:parameterValueGroup>
-          <command:parameterValue required="true" variableLength="false">SmtpDeliveryMethod</command:parameterValue>
-          <dev:type>
-            <maml:name>SmtpDeliveryMethod</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>Network</dev:defaultValue>
+          <command:parameterValue required="false" variableLength="true">System.Net.Mail.SmtpDeliveryMethod</command:parameterValue>
         </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>Subject</maml:name>
           <maml:description>
             <maml:para>Specifies the subject of the email message.</maml:para>
           </maml:description>
-          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-          <dev:type>
-            <maml:name>String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
+          <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>BlindCarbonCopy</maml:name>
         <maml:description>
-          <maml:para>Specifies the addresses to which the mail blind copy is sent. Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+          <maml:para>Specifies the addresses to which the mail blind copy is sent.
+Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">MailAddress[]</command:parameterValue>
-        <dev:type>
-          <maml:name>MailAddress[]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Net.Mail.MailAddress[]</command:parameterValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>Body</maml:name>
         <maml:description>
           <maml:para>Specifies the body of the email message.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-        <dev:type>
-          <maml:name>String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>BodyAsHtml</maml:name>
         <maml:description>
           <maml:para>Indicates that the value of the Body parameter contains HTML.</maml:para>
         </maml:description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-        <dev:type>
-          <maml:name>SwitchParameter</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>False</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Management.Automation.SwitchParameter</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>CarbonCopy</maml:name>
         <maml:description>
-          <maml:para>Specifies the addresses to which the mail copy is sent. Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+          <maml:para>Specifies the addresses to which the mail copy is sent.
+Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">MailAddress[]</command:parameterValue>
-        <dev:type>
-          <maml:name>MailAddress[]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Net.Mail.MailAddress[]</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>Credential</maml:name>
         <maml:description>
-          <maml:para>Specifies a user account that has permission to perform this action. The default is the current user.</maml:para>
+          <maml:para>Specifies a user account that has permission to perform this action.
+The default is the current user.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
-        <dev:type>
-          <maml:name>PSCredential</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Management.Automation.PSCredential</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>DeliveryNotificationOption</maml:name>
         <maml:description>
           <maml:para>Describes the delivery notification options for email.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">DeliveryNotificationOptions</command:parameterValue>
-        <dev:type>
-          <maml:name>DeliveryNotificationOptions</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Net.Mail.DeliveryNotificationOptions</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>MailAttachment</maml:name>
         <maml:description>
           <maml:para>Specifies attachment object.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">Attachment[]</command:parameterValue>
-        <dev:type>
-          <maml:name>Attachment[]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Net.Mail.Attachment[]</command:parameterValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>MailFrom</maml:name>
         <maml:description>
-          <maml:para>Specifies the address from which the mail is sent. Enter a name (optional) and email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+          <maml:para>Specifies the address from which the mail is sent.
+Enter a name (optional) and email address, such as Name&lt;someone@example.com&gt;.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">MailAddress</command:parameterValue>
-        <dev:type>
-          <maml:name>MailAddress</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.Net.Mail.MailAddress</command:parameterValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>MailTo</maml:name>
         <maml:description>
-          <maml:para>Specifies the addresses to which the mail is sent. Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+          <maml:para>Specifies the addresses to which the mail is sent.
+Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">MailAddress[]</command:parameterValue>
-        <dev:type>
-          <maml:name>MailAddress[]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.Net.Mail.MailAddress[]</command:parameterValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>PickupDirectoryPath</maml:name>
         <maml:description>
           <maml:para>Specifies the path the SMTP Server pickup directory.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">DirectoryInfo</command:parameterValue>
-        <dev:type>
-          <maml:name>DirectoryInfo</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.IO.DirectoryInfo</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>Priority</maml:name>
         <maml:description>
           <maml:para>Specifies the priority of the email message.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">MailPriority</command:parameterValue>
-        <dev:type>
-          <maml:name>MailPriority</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>Normal</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Net.Mail.MailPriority</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>ReplyTo</maml:name>
         <maml:description>
-          <maml:para>Specifies the reply to address where replies will be sent. Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
+          <maml:para>Specifies the reply to address where replies will be sent.
+Enter names (optional) and the email address, such as Name&lt;someone@example.com&gt;.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">MailAddress[]</command:parameterValue>
-        <dev:type>
-          <maml:name>MailAddress[]</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Net.Mail.MailAddress[]</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>SmtpDeliveryMethod</maml:name>
         <maml:description>
           <maml:para>Specifies the method used for delivery.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">SmtpDeliveryMethod</command:parameterValue>
-        <dev:type>
-          <maml:name>SmtpDeliveryMethod</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>Network</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Net.Mail.SmtpDeliveryMethod</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>SmtpPort</maml:name>
         <maml:description>
-          <maml:para>Specifies an alternate port on the SMTP server. The default value is 25, which is the default SMTP port.</maml:para>
+          <maml:para>Specifies an alternate port on the SMTP server.
+The default value is 25, which is the default SMTP port.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
-        <dev:type>
-          <maml:name>Int32</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>25</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Int32</command:parameterValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>SmtpServer</maml:name>
         <maml:description>
           <maml:para>Specifies the name of the SMTP server that sends the email message.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-        <dev:type>
-          <maml:name>String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>Subject</maml:name>
         <maml:description>
           <maml:para>Specifies the subject of the email message.</maml:para>
         </maml:description>
-        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
-        <dev:type>
-          <maml:name>String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
+        <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>UseTLS</maml:name>
         <maml:description>
           <maml:para>Indicates that the cmdlet uses the Secure Sockets Layer (SSL) protocol to establish a connection to the remote computer to send mail.</maml:para>
         </maml:description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-        <dev:type>
-          <maml:name>SwitchParameter</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>False</dev:defaultValue>
+        <command:parameterValue required="false" variableLength="true">System.Management.Automation.SwitchParameter</command:parameterValue>
       </command:parameter>
     </command:parameters>
-    <command:inputTypes>
-      <command:inputType>
-        <dev:type>
-          <maml:name>None</maml:name>
-        </dev:type>
-        <maml:description>
-          <maml:para></maml:para>
-        </maml:description>
-      </command:inputType>
-    </command:inputTypes>
+    <command:inputTypes />
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>System.Void</maml:name>
+          <dev:name>System.Void</dev:name>
         </dev:type>
         <maml:description>
-          <maml:para></maml:para>
+          <maml:para />
         </maml:description>
       </command:returnValue>
     </command:returnValues>
     <maml:alertSet>
       <maml:alert>
-        <maml:para></maml:para>
+        <maml:para />
       </maml:alert>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>------- EXAMPLE 1: Send email message using SMTP server -------</maml:title>
-        <dev:code>Send-MailToolMessage -MailFrom "Joe&lt;joe@example.com&gt;" -MailTo "John&lt;john@example.com&gt;" -Subject "Test Email" -Body "This is a test message." -SmtpServer mail.example.com</dev:code>
-        <dev:remarks>
+        <maml:title>--------- EXAMPLE 1: Send email message using SMTP server ---------</maml:title>
+        <maml:introduction>
+          <maml:para>Send-MailToolMessage -MailFrom "Joe&lt;joe@example.com&gt;" -MailTo "John&lt;john@example.com&gt;" -Subject "Test Email" -Body "This is a test message." -SmtpServer mail.example.com</maml:para>
+          <maml:para>&#x80;</maml:para>
           <maml:para>Sends email message through SMTP server.</maml:para>
-        </dev:remarks>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
       </command:example>
       <command:example>
-        <maml:title>------ EXAMPLE 2: Send email message using pickup folder ------</maml:title>
-        <dev:code>Send-MailToolMessage -MailFrom "Joe&lt;joe@example.com&gt;" -MailTo "John&lt;john@example.com&gt;" -Subject "Test Email" -Body "This is a test message." -SmtpDeliveryMethod "SpecifiedPickupDirectory" -PickupDirectoryPath "C:\inetpub\mailroot\pickup"</dev:code>
-        <dev:remarks>
+        <maml:title>--------- EXAMPLE 2: Send email message using pickup folder ---------</maml:title>
+        <maml:introduction>
+          <maml:para>Send-MailToolMessage -MailFrom "Joe&lt;joe@example.com&gt;" -MailTo "John&lt;john@example.com&gt;" -Subject "Test Email" -Body "This is a test message." -SmtpDeliveryMethod "SpecifiedPickupDirectory" -PickupDirectoryPath "C:\inetpub\mailroot\pickup"</maml:para>
+          <maml:para>&#x80;</maml:para>
           <maml:para>Sends email message via drop folder.</maml:para>
-        </dev:remarks>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
       </command:example>
     </command:examples>
     <command:relatedLinks />
