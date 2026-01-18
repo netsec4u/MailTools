@@ -85,8 +85,8 @@ Class ErrorRecordXml {
 					$PropertyNode = $XmlDocument.CreateElement($Property.Name)
 					$ErrorsChild = $ChildObject.AppendChild($PropertyNode)
 
-					foreach ($Error in $Exception.$($Property.Name)) {
-						$ErrorXml = [ErrorRecordXml]::New($Error, 'Error', $MaxDepth, $CurrentDepth)
+					foreach ($ErrorItem in $Exception.$($Property.Name)) {
+						$ErrorXml = [ErrorRecordXml]::New($ErrorItem, 'Error', $MaxDepth, $CurrentDepth)
 
 						if ($null -ne $ErrorXml.XmlElement) {
 							$ChildElement = $XmlDocument.ImportNode($ErrorXml.XmlElement, $true)
@@ -203,6 +203,18 @@ Class ObjectXml {
 		$this.XmlElement = $ChildObject
 	}
 	#EndRegion
+}
+
+class TransformPath : System.Management.Automation.ArgumentTransformationAttribute {
+	[object]Transform([System.Management.Automation.EngineIntrinsics]$EngineIntrinsics, [object]$InputData) {
+		if ([System.IO.Path]::IsPathRooted($InputData)) {
+			return $InputData
+		} else {
+			return [System.IO.Path]::GetFullPath([System.IO.Path]::Combine($PWD.Path, $InputData))
+		}
+
+		throw [System.InvalidOperationException]::New('Unexpected error.')
+	}
 }
 
 class ValidatePathExists : System.Management.Automation.ValidateArgumentsAttribute {
@@ -617,7 +629,7 @@ function Format-MailAttachment {
 			ParameterSetName = 'FilePath'
 		)]
 		[ValidatePathExists('Leaf')]
-		[System.IO.FileInfo]$FilePath,
+		[System.IO.FileInfo][TransformPath()]$FilePath,
 
 		[Parameter(
 			Mandatory = $true,
@@ -708,7 +720,7 @@ function Format-XslTemplate {
 			ValueFromPipelineByPropertyName = $false
 		)]
 		[ValidatePathExists('Leaf')]
-		[System.IO.FileInfo]$XslTemplatePath,
+		[System.IO.FileInfo][TransformPath()]$XslTemplatePath,
 
 		[Parameter(
 			Mandatory = $false,
