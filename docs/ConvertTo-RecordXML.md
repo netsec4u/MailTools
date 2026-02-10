@@ -1,6 +1,6 @@
 ---
 document type: cmdlet
-external help file: MailTools-help.xml
+external help file: MailTools-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: MailTools
@@ -37,17 +37,20 @@ Converts record set object to XML.
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### Example 1
 
+```powershell
 $RecordSet = Get-SqlClientDataSet -ServerInstance . -DatabaseName master -SqlCommandText 'SELECT * FROM sys.tables;' -OutputAs DataRow
-
 ConvertTo-RecordXML -InputObject $RecordSet -RootNodeName "Records"
+```
 
 Converts record set object to Xml with root node named Records.
 
-### EXAMPLE 2
+### Example 2
 
+```powershell
 Get-SqlClientDataSet -ServerInstance . -DatabaseName master -SqlCommandText 'SELECT * FROM sys.tables;' -OutputAs DataRow | ConvertTo-RecordXML -RootNodeName "Records"
+```
 
 Converts record set object to Xml with root node named Records.
 

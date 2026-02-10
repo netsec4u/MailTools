@@ -1,6 +1,6 @@
 ---
 document type: cmdlet
-external help file: MailTools-help.xml
+external help file: MailTools-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: MailTools
@@ -37,17 +37,20 @@ Convert object to XML.
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### Example 1
 
+```powershell
 $Object = Get-ChildItem
-
 ConvertTo-ObjectXML -Object $Object -RootNodeName "Object"
+```
 
 Converts PowerShell object to Xml with root node named Object.
 
-### EXAMPLE 2
+### Example 2
 
+```powershell
 Get-ChildItem | ConvertTo-ObjectXML -RootNodeName "Object"
+```
 
 Converts PowerShell object to Xml with root node named Object.
 

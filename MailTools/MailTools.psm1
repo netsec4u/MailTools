@@ -250,7 +250,7 @@ class ValidatePathExists : System.Management.Automation.ValidateArgumentsAttribu
 function Build-MailBody {
 	<#
 	.EXTERNALHELP
-	MailTools-help.xml
+	MailTools-Help.xml
 	#>
 
 	[System.Diagnostics.DebuggerStepThrough()]
@@ -344,7 +344,7 @@ function Build-MailBody {
 function ConvertTo-ErrorXML {
 	<#
 	.EXTERNALHELP
-	MailTools-help.xml
+	MailTools-Help.xml
 	#>
 
 	[System.Diagnostics.DebuggerStepThrough()]
@@ -400,7 +400,7 @@ function ConvertTo-ErrorXML {
 function ConvertTo-ObjectXML {
 	<#
 	.EXTERNALHELP
-	MailTools-help.xml
+	MailTools-Help.xml
 	#>
 
 	[System.Diagnostics.DebuggerStepThrough()]
@@ -456,7 +456,7 @@ function ConvertTo-ObjectXML {
 function ConvertTo-RecordXML {
 	<#
 	.EXTERNALHELP
-	MailTools-help.xml
+	MailTools-Help.xml
 	#>
 
 	[System.Diagnostics.DebuggerStepThrough()]
@@ -607,7 +607,7 @@ function Get-MimeContentType {
 function Format-MailAttachment {
 	<#
 	.EXTERNALHELP
-	MailTools-help.xml
+	MailTools-Help.xml
 	#>
 
 	[System.Diagnostics.DebuggerStepThrough()]
@@ -700,7 +700,7 @@ function Format-MailAttachment {
 function Format-XslTemplate {
 	<#
 	.EXTERNALHELP
-	MailTools-help.xml
+	MailTools-Help.xml
 	#>
 
 	[System.Diagnostics.DebuggerStepThrough()]
@@ -780,7 +780,7 @@ function Format-XslTemplate {
 function Send-MailToolMessage {
 	<#
 	.EXTERNALHELP
-	MailTools-help.xml
+	MailTools-Help.xml
 	#>
 
 	[System.Diagnostics.DebuggerStepThrough()]

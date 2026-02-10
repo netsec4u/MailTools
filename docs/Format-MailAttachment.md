@@ -1,6 +1,6 @@
 ---
 document type: cmdlet
-external help file: MailTools-help.xml
+external help file: MailTools-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: MailTools
@@ -47,17 +47,20 @@ Create mail attachment object.
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### Example 1
 
+```powershell
 Format-MailAttachment -FilePath C:\Temp\MyFile.txt
+```
 
 Creates new mail attachment object using MyFile.txt.
 
-### EXAMPLE 2
+### Example 2
 
+```powershell
 $FileStreamObject = [System.IO.FileStream]::New('C:\MyFile.txt', [System.IO.FileMode]::Open)
-
 Format-MailAttachment -FileName image.png -FileStream $FileStreamObject -Inline
+```
 
 Creates new mail attachment called image.png from file stream object.
 

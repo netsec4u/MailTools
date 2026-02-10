@@ -1,6 +1,6 @@
 ---
 document type: cmdlet
-external help file: MailTools-help.xml
+external help file: MailTools-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: MailTools
@@ -71,15 +71,19 @@ Send an email message.
 
 ## EXAMPLES
 
-### EXAMPLE 1: Send email message using SMTP server
+### Example 1: Send email message using SMTP server
 
+```powershell
 Send-MailToolMessage -MailFrom "Joe<joe@example.com>" -MailTo "John<john@example.com>" -Subject "Test Email" -Body "This is a test message." -SmtpServer mail.example.com
+```
 
 Sends email message through SMTP server.
 
-### EXAMPLE 2: Send email message using pickup folder
+### Example 2: Send email message using pickup folder
 
+```powershell
 Send-MailToolMessage -MailFrom "Joe<joe@example.com>" -MailTo "John<john@example.com>" -Subject "Test Email" -Body "This is a test message." -SmtpDeliveryMethod "SpecifiedPickupDirectory" -PickupDirectoryPath "C:\inetpub\mailroot\pickup"
+```
 
 Sends email message via drop folder.
 

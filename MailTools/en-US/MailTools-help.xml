@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <helpItems xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" schema="maml" xmlns="http://msh">
   <command:command>
     <command:details>
@@ -80,23 +80,26 @@
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>--------- EXAMPLE 1: Build HTML email body ---------</maml:title>
+        <maml:title>--------- Example 1: Build HTML email body ---------</maml:title>
         <maml:introduction>
-          <maml:para>$XmlDocument = '&lt;Root&gt;&lt;/root&gt;'
+        </maml:introduction>
+        <dev:code>$XmlDocument = '&lt;Root&gt;&lt;/root&gt;'
 $OrderedHashtable = [ordered]@{
 	Server = 'MyServer'
 	Status = 'Down'
-}</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Build-MailBody -Xml $XmlDocument -SummaryItem $OrderedHashtable</maml:para>
-          <maml:para>&#x80;</maml:para>
+}
+Build-MailBody -Xml $XmlDocument -SummaryItem $OrderedHashtable</dev:code>
+        <dev:remarks>
           <maml:para>Builds HTML body.</maml:para>
-        </maml:introduction>
-        <dev:code />
-        <dev:remarks />
+        </dev:remarks>
       </command:example>
     </command:examples>
-    <command:relatedLinks />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version</maml:linkText>
+        <command:uri />
+      </maml:navigationLink>
+    </command:relatedLinks>
   </command:command>
   <command:command>
     <command:details>
@@ -173,29 +176,31 @@ $OrderedHashtable = [ordered]@{
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>--------- EXAMPLE 1 ---------</maml:title>
+        <maml:title>--------- Example 1 ---------</maml:title>
         <maml:introduction>
-          <maml:para>$ErrorObject = Get-Error</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>ConvertTo-ErrorXML -ErrorObject $ErrorObject -RootNodeName "Errors"</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Converts error object to Xml with root node named Errors.</maml:para>
         </maml:introduction>
-        <dev:code />
-        <dev:remarks />
+        <dev:code>$ErrorObject = Get-Error
+ConvertTo-ErrorXML -ErrorObject $ErrorObject -RootNodeName "Errors"</dev:code>
+        <dev:remarks>
+          <maml:para>Converts error object to Xml with root node named Errors.</maml:para>
+        </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>--------- EXAMPLE 2 ---------</maml:title>
+        <maml:title>--------- Example 2 ---------</maml:title>
         <maml:introduction>
-          <maml:para>Get-Error | ConvertTo-ErrorXML -RootNodeName "Errors"</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Converts error object to Xml with root node named Errors.</maml:para>
         </maml:introduction>
-        <dev:code />
-        <dev:remarks />
+        <dev:code>Get-Error | ConvertTo-ErrorXML -RootNodeName "Errors"</dev:code>
+        <dev:remarks>
+          <maml:para>Converts error object to Xml with root node named Errors.</maml:para>
+        </dev:remarks>
       </command:example>
     </command:examples>
-    <command:relatedLinks />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version</maml:linkText>
+        <command:uri />
+      </maml:navigationLink>
+    </command:relatedLinks>
   </command:command>
   <command:command>
     <command:details>
@@ -272,29 +277,31 @@ $OrderedHashtable = [ordered]@{
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>--------- EXAMPLE 1 ---------</maml:title>
+        <maml:title>--------- Example 1 ---------</maml:title>
         <maml:introduction>
-          <maml:para>$Object = Get-ChildItem</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>ConvertTo-ObjectXML -Object $Object -RootNodeName "Object"</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Converts PowerShell object to Xml with root node named Object.</maml:para>
         </maml:introduction>
-        <dev:code />
-        <dev:remarks />
+        <dev:code>$Object = Get-ChildItem
+ConvertTo-ObjectXML -Object $Object -RootNodeName "Object"</dev:code>
+        <dev:remarks>
+          <maml:para>Converts PowerShell object to Xml with root node named Object.</maml:para>
+        </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>--------- EXAMPLE 2 ---------</maml:title>
+        <maml:title>--------- Example 2 ---------</maml:title>
         <maml:introduction>
-          <maml:para>Get-ChildItem | ConvertTo-ObjectXML -RootNodeName "Object"</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Converts PowerShell object to Xml with root node named Object.</maml:para>
         </maml:introduction>
-        <dev:code />
-        <dev:remarks />
+        <dev:code>Get-ChildItem | ConvertTo-ObjectXML -RootNodeName "Object"</dev:code>
+        <dev:remarks>
+          <maml:para>Converts PowerShell object to Xml with root node named Object.</maml:para>
+        </dev:remarks>
       </command:example>
     </command:examples>
-    <command:relatedLinks />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version</maml:linkText>
+        <command:uri />
+      </maml:navigationLink>
+    </command:relatedLinks>
   </command:command>
   <command:command>
     <command:details>
@@ -371,29 +378,31 @@ $OrderedHashtable = [ordered]@{
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>--------- EXAMPLE 1 ---------</maml:title>
+        <maml:title>--------- Example 1 ---------</maml:title>
         <maml:introduction>
-          <maml:para>$RecordSet = Get-SqlClientDataSet -ServerInstance . -DatabaseName master -SqlCommandText 'SELECT * FROM sys.tables;' -OutputAs DataRow</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>ConvertTo-RecordXML -InputObject $RecordSet -RootNodeName "Records"</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Converts record set object to Xml with root node named Records.</maml:para>
         </maml:introduction>
-        <dev:code />
-        <dev:remarks />
+        <dev:code>$RecordSet = Get-SqlClientDataSet -ServerInstance . -DatabaseName master -SqlCommandText 'SELECT * FROM sys.tables;' -OutputAs DataRow
+ConvertTo-RecordXML -InputObject $RecordSet -RootNodeName "Records"</dev:code>
+        <dev:remarks>
+          <maml:para>Converts record set object to Xml with root node named Records.</maml:para>
+        </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>--------- EXAMPLE 2 ---------</maml:title>
+        <maml:title>--------- Example 2 ---------</maml:title>
         <maml:introduction>
-          <maml:para>Get-SqlClientDataSet -ServerInstance . -DatabaseName master -SqlCommandText 'SELECT * FROM sys.tables;' -OutputAs DataRow | ConvertTo-RecordXML -RootNodeName "Records"</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Converts record set object to Xml with root node named Records.</maml:para>
         </maml:introduction>
-        <dev:code />
-        <dev:remarks />
+        <dev:code>Get-SqlClientDataSet -ServerInstance . -DatabaseName master -SqlCommandText 'SELECT * FROM sys.tables;' -OutputAs DataRow | ConvertTo-RecordXML -RootNodeName "Records"</dev:code>
+        <dev:remarks>
+          <maml:para>Converts record set object to Xml with root node named Records.</maml:para>
+        </dev:remarks>
       </command:example>
     </command:examples>
-    <command:relatedLinks />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version</maml:linkText>
+        <command:uri />
+      </maml:navigationLink>
+    </command:relatedLinks>
   </command:command>
   <command:command>
     <command:details>
@@ -500,29 +509,31 @@ $OrderedHashtable = [ordered]@{
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>--------- EXAMPLE 1 ---------</maml:title>
+        <maml:title>--------- Example 1 ---------</maml:title>
         <maml:introduction>
-          <maml:para>Format-MailAttachment -FilePath C:\Temp\MyFile.txt</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Creates new mail attachment object using MyFile.txt.</maml:para>
         </maml:introduction>
-        <dev:code />
-        <dev:remarks />
+        <dev:code>Format-MailAttachment -FilePath C:\Temp\MyFile.txt</dev:code>
+        <dev:remarks>
+          <maml:para>Creates new mail attachment object using MyFile.txt.</maml:para>
+        </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>--------- EXAMPLE 2 ---------</maml:title>
+        <maml:title>--------- Example 2 ---------</maml:title>
         <maml:introduction>
-          <maml:para>$FileStreamObject = [System.IO.FileStream]::New('C:\MyFile.txt', [System.IO.FileMode]::Open)</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Format-MailAttachment -FileName image.png -FileStream $FileStreamObject -Inline</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Creates new mail attachment called image.png from file stream object.</maml:para>
         </maml:introduction>
-        <dev:code />
-        <dev:remarks />
+        <dev:code>$FileStreamObject = [System.IO.FileStream]::New('C:\MyFile.txt', [System.IO.FileMode]::Open)
+Format-MailAttachment -FileName image.png -FileStream $FileStreamObject -Inline</dev:code>
+        <dev:remarks>
+          <maml:para>Creates new mail attachment called image.png from file stream object.</maml:para>
+        </dev:remarks>
       </command:example>
     </command:examples>
-    <command:relatedLinks />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version</maml:linkText>
+        <command:uri />
+      </maml:navigationLink>
+    </command:relatedLinks>
   </command:command>
   <command:command>
     <command:details>
@@ -604,17 +615,21 @@ $OrderedHashtable = [ordered]@{
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>--------- EXAMPLE 1 ---------</maml:title>
+        <maml:title>--------- Example 1 ---------</maml:title>
         <maml:introduction>
-          <maml:para>Format-XslTemplate -XmlContent . -XslTemplatePath .\MyTemplate.xsl</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Transforms Xsl template.</maml:para>
         </maml:introduction>
-        <dev:code />
-        <dev:remarks />
+        <dev:code>Format-XslTemplate -XmlContent . -XslTemplatePath .\MyTemplate.xsl</dev:code>
+        <dev:remarks>
+          <maml:para>Transforms Xsl template.</maml:para>
+        </dev:remarks>
       </command:example>
     </command:examples>
-    <command:relatedLinks />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version</maml:linkText>
+        <command:uri />
+      </maml:navigationLink>
+    </command:relatedLinks>
   </command:command>
   <command:command>
     <command:details>
@@ -999,26 +1014,29 @@ The default value is 25, which is the default SMTP port.</maml:para>
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>--------- EXAMPLE 1: Send email message using SMTP server ---------</maml:title>
+        <maml:title>--------- Example 1: Send email message using SMTP server ---------</maml:title>
         <maml:introduction>
-          <maml:para>Send-MailToolMessage -MailFrom "Joe&lt;joe@example.com&gt;" -MailTo "John&lt;john@example.com&gt;" -Subject "Test Email" -Body "This is a test message." -SmtpServer mail.example.com</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Sends email message through SMTP server.</maml:para>
         </maml:introduction>
-        <dev:code />
-        <dev:remarks />
+        <dev:code>Send-MailToolMessage -MailFrom "Joe&lt;joe@example.com&gt;" -MailTo "John&lt;john@example.com&gt;" -Subject "Test Email" -Body "This is a test message." -SmtpServer mail.example.com</dev:code>
+        <dev:remarks>
+          <maml:para>Sends email message through SMTP server.</maml:para>
+        </dev:remarks>
       </command:example>
       <command:example>
-        <maml:title>--------- EXAMPLE 2: Send email message using pickup folder ---------</maml:title>
+        <maml:title>--------- Example 2: Send email message using pickup folder ---------</maml:title>
         <maml:introduction>
-          <maml:para>Send-MailToolMessage -MailFrom "Joe&lt;joe@example.com&gt;" -MailTo "John&lt;john@example.com&gt;" -Subject "Test Email" -Body "This is a test message." -SmtpDeliveryMethod "SpecifiedPickupDirectory" -PickupDirectoryPath "C:\inetpub\mailroot\pickup"</maml:para>
-          <maml:para>&#x80;</maml:para>
-          <maml:para>Sends email message via drop folder.</maml:para>
         </maml:introduction>
-        <dev:code />
-        <dev:remarks />
+        <dev:code>Send-MailToolMessage -MailFrom "Joe&lt;joe@example.com&gt;" -MailTo "John&lt;john@example.com&gt;" -Subject "Test Email" -Body "This is a test message." -SmtpDeliveryMethod "SpecifiedPickupDirectory" -PickupDirectoryPath "C:\inetpub\mailroot\pickup"</dev:code>
+        <dev:remarks>
+          <maml:para>Sends email message via drop folder.</maml:para>
+        </dev:remarks>
       </command:example>
     </command:examples>
-    <command:relatedLinks />
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version</maml:linkText>
+        <command:uri />
+      </maml:navigationLink>
+    </command:relatedLinks>
   </command:command>
 </helpItems>

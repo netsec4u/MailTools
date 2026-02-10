@@ -1,6 +1,6 @@
 ---
 document type: cmdlet
-external help file: MailTools-help.xml
+external help file: MailTools-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: MailTools
@@ -37,17 +37,20 @@ Convert error object to XML.
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### Example 1
 
+```powershell
 $ErrorObject = Get-Error
-
 ConvertTo-ErrorXML -ErrorObject $ErrorObject -RootNodeName "Errors"
+```
 
 Converts error object to Xml with root node named Errors.
 
-### EXAMPLE 2
+### Example 2
 
+```powershell
 Get-Error | ConvertTo-ErrorXML -RootNodeName "Errors"
+```
 
 Converts error object to Xml with root node named Errors.
 

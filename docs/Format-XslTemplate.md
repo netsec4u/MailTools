@@ -1,6 +1,6 @@
 ---
 document type: cmdlet
-external help file: MailTools-help.xml
+external help file: MailTools-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: MailTools
@@ -38,9 +38,11 @@ Transform Xsl template.
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### Example 1
 
+```powershell
 Format-XslTemplate -XmlContent . -XslTemplatePath .\MyTemplate.xsl
+```
 
 Transforms Xsl template.
 

@@ -1,6 +1,6 @@
 ---
 document type: cmdlet
-external help file: MailTools-help.xml
+external help file: MailTools-Help.xml
 HelpUri: ''
 Locale: en-US
 Module Name: MailTools
@@ -38,15 +38,16 @@ Build HTML message body from Error or record set objects.
 
 ## EXAMPLES
 
-### EXAMPLE 1: Build HTML email body
+### Example 1: Build HTML email body
 
+```powershell
 $XmlDocument = '<Root></root>'
 $OrderedHashtable = [ordered]@{
 	Server = 'MyServer'
 	Status = 'Down'
 }
-
 Build-MailBody -Xml $XmlDocument -SummaryItem $OrderedHashtable
+```
 
 Builds HTML body.
 
