@@ -69,45 +69,65 @@
 
 <xsl:template name="EmailStyles">
 	:root {
-		color-scheme: light only;
-		supported-color-schemes: light only;
+		color-scheme: light dark;
+		--primary-color: light-dark(#333, #fafafa);
+		--primary-background: light-dark(#e4e4e4, #121212);
 	}
 
 	* { font-family:Arial; font-size:12pt; }
 	h1, h5, th { text-align: center; }
-	table { margin: auto; border: thin ridge grey; border-collapse:collapse; font-size:12pt; table-layout:fixed;  }
-	th { background: #0046c3; color: #fff; padding: 4px 8px; }
-	td { text-align:left; vertical-align:top; padding: 4px 8px; color: #000; }
+	table {
+		margin: auto;
+		border: thin ridge light-dark(#000, grey);
+		border-collapse:collapse;
+		font-size:12pt;
+		table-layout:fixed;
+	}
+	th {
+		background: light-dark(#96BEEB, grey);
+		color: light-dark(#000, grey);
+		padding: 4px 8px;
+	}
+	td {
+		text-align:left;
+		vertical-align:top;
+		padding: 4px 8px;
+		/*color: #000;*/
+	}
+
 	/*
 	tr:nth-child(even) { background: #dae5f4; }
 	tr:nth-child(odd) { background: #b8d1f3; }
 	*/
-	#bodyTable { border:none; width:100%; max-width:1280px; }
-	#emailContainer { border:none; width:100%; max-width:1276px; }
-	#emailHeader { border:none; width:100%; max-width:1272px; }
-	#emailBody { border:none; width:100%; max-width:1272px; }
-	#emailFooter { border:none; width:100%; max-width:1272px; }
 
-	.SummaryTable { border:none; width:100%; max-width:1268px; }
+	/* By ID */
+	#bodyTable { border:none; width:100%; max-width:2048px; }
+	#emailContainer { border:none; width:100%; max-width:2044px; }
+	#emailHeader { border:none; width:100%; max-width:2044px; }
+	#emailBody { border:none; width:100%; max-width:2044px; }
+	#emailFooter { border:none; width:100%; max-width:2044px; }
+
+	/* By Class */
+	.SummaryTable { border:none; width:100%; max-width:2032px; }
 	.SummaryTable tr .Property { width:160px; }
 	.SummaryTable tr .Value { width:available; }
 
 	.ObjectTable { width:100%; max-width:2048px; table-layout:auto; }
-	.ObjectTable th { border-left: 1px solid #fff; }
-	.ObjectTable td { border-left: 1px solid #fff; }
+	.ObjectTable th { border-left: 1px solid light-dark(#000, grey); }
+	.ObjectTable td { border-left: 1px solid light-dark(#000, grey); }
 
 	.RecordSetTable { width:100%; max-width:2048px; table-layout:auto; }
-	.RecordSetTable th { border-left: 1px solid #fff; }
-	.RecordSetTable td { border-left: 1px solid #fff; }
+	.RecordSetTable th { border-left: 1px solid light-dark(#000, grey); }
+	.RecordSetTable td { border-left: 1px solid light-dark(#000, grey); }
 
 	.ErrorDetailTable { width:100%; max-width:2048px; }
 	.ErrorDetailTable tr .Property { width:248px; font-weight: bold; }
 	.ErrorDetailTable tr .Value { width:available; }
-	.ErrorDetailTable th { border-left: 1px solid #fff; }
-	.ErrorDetailTable td { border-left: 1px solid #fff; }
+	.ErrorDetailTable th { border-left: 1px solid light-dark(#000, grey); }
+	.ErrorDetailTable td { border-left: 1px solid light-dark(#000, grey); }
 
-	.tr-even { background:#dae5f4; }
-	.tr-odd { background:#b8d1f3; }
+	.tr-even { background: light-dark(#ffffff, #1a1a1a); }
+	.tr-odd { background: light-dark(#D0E0F3, #121212); }
 </xsl:template>
 
 <xsl:template name="EmailHeader">
@@ -116,11 +136,11 @@
 			<td class="Property">Date:</td>
 			<td class="Value"><xsl:value-of select="$EventDate" /></td>
 		</tr>
-		<tr><td colspan="2">&#32;</td></tr>
+		<tr><td colspan="2" /></tr>
 
 		<xsl:apply-templates select = "Message/Summary" />
 
-		<tr><td colspan="2">&#32;</td></tr>
+		<tr><td colspan="2" /></tr>
 	</table>
 </xsl:template>
 
@@ -154,8 +174,8 @@
 	<xsl:for-each select="$n">
 		<table class="ErrorDetailTable">
 			<tr>
-				<th class="Property">&#32;</th>
-				<th class="Value">&#32;</th>
+				<th class="Property" />
+				<th class="Value" />
 			</tr>
 
 			<xsl:for-each select="*">
@@ -173,7 +193,7 @@
 				</xsl:choose>
 			</xsl:for-each>
 
-			<tr><td colspan="2">&#32;</td></tr>
+			<tr><td colspan="2" /></tr>
 		</table>
 	</xsl:for-each>
 </xsl:template>

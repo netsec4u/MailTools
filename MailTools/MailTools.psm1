@@ -667,7 +667,7 @@ function Format-MailAttachment {
 
 			switch ($PSCmdlet.ParameterSetName) {
 				'FilePath' {
-					$MailAttachment = [Net.Mail.Attachment]::New((Resolve-Path -Path $FilePath).Path, $MimeContentType)
+					$MailAttachment = [Net.Mail.Attachment]::New($FilePath.FullName, $MimeContentType)
 				}
 				'FileStream' {
 					$MailAttachment = [Net.Mail.Attachment]::New($FileStream, $MimeContentType)
