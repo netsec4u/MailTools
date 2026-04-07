@@ -983,8 +983,8 @@ function Send-MailToolMessage {
 						$SmtpClient.EnableSsl = $true
 					}
 
-					if ($PSBoundParameters.ContainsKey('Credentials')) {
-						$SmtpClient.Credentials = [System.Net.NetworkCredential]::New($SMTPUsername, $SMTPPassword)
+					if ($PSBoundParameters.ContainsKey('Credential')) {
+						$SmtpClient.Credentials = $Credential
 					} else {
 						$SmtpClient.UseDefaultCredentials = $true
 					}
