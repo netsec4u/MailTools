@@ -97,7 +97,7 @@ Build-MailBody -Xml $XmlDocument -SummaryItem $OrderedHashtable</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
-        <command:uri />
+        <command:uri>https://github.com/netsec4u/MailTools/blob/main/docs/Build-MailBody.md</command:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -198,7 +198,7 @@ ConvertTo-ErrorXML -ErrorObject $ErrorObject -RootNodeName "Errors"</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
-        <command:uri />
+        <command:uri>https://github.com/netsec4u/MailTools/blob/main/docs/ConvertTo-ErrorXML.md</command:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -299,7 +299,7 @@ ConvertTo-ObjectXML -Object $Object -RootNodeName "Object"</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
-        <command:uri />
+        <command:uri>https://github.com/netsec4u/MailTools/blob/main/docs/ConvertTo-ObjectXML.md</command:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -400,7 +400,7 @@ ConvertTo-RecordXML -InputObject $RecordSet -RootNodeName "Records"</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
-        <command:uri />
+        <command:uri>https://github.com/netsec4u/MailTools/blob/main/docs/ConvertTo-RecordXML.md</command:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -531,7 +531,7 @@ Format-MailAttachment -FileName image.png -FileStream $FileStreamObject -Inline<
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
-        <command:uri />
+        <command:uri>https://github.com/netsec4u/MailTools/blob/main/docs/Format-MailAttachment.md</command:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -627,7 +627,7 @@ Format-MailAttachment -FileName image.png -FileStream $FileStreamObject -Inline<
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
-        <command:uri />
+        <command:uri>https://github.com/netsec4u/MailTools/blob/main/docs/Format-XslTemplate.md</command:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -1035,7 +1035,7 @@ The default value is 25, which is the default SMTP port.</maml:para>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
-        <command:uri />
+        <command:uri>https://github.com/netsec4u/MailTools/blob/main/docs/Send-MailToolMessage.md</command:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>

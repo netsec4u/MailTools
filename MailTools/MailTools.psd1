@@ -4,7 +4,7 @@
 RootModule = 'MailTools.psm1'
 
 # Version number of this module.
-ModuleVersion = '2.2.10.4'
+ModuleVersion = '2.2.10.5'
 
 # Supported PSEditions
 CompatiblePSEditions = @('Core', 'Desktop')
@@ -134,7 +134,7 @@ PrivateData = @{
 } # End of PrivateData hashtable
 
 # HelpInfo URI of this module
-HelpInfoURI = 'https://github.com/netsec4u/MailTools/blob/main/docs/MailTools.md'
+HelpInfoURI = 'https://netsec4u.github.io/Help/MailTools/'
 
 # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
 # DefaultCommandPrefix = ''

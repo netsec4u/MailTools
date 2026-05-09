@@ -1,11 +1,11 @@
 ---
 document type: module
 Help Version: 2.0.0.0
-HelpInfoUri: https://github.com/netsec4u/MailTools/blob/main/docs/MailTools.md
+HelpInfoUri: https://netsec4u.github.io/Help/MailTools/
 Locale: en-US
 Module Guid: 2e6c86d5-98ac-4bb7-bc9a-9ff2fab701a0
 Module Name: MailTools
-ms.date: 07/29/2025
+ms.date: 05/08/2026
 PlatyPS schema version: 2024-05-01
 title: MailTools Module
 ---
